@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mihrab0.vercel.app/sitemap.xml

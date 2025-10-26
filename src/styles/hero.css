@@ -1,0 +1,187 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    position: relative;
+    background-image: url("../assets/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+#home {
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 2;
+}
+
+.hero__content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #25d366;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #f39c12;
+    width: 0;
+    direction: ltr;
+    animation: typing 4s steps(25) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #f1f1f1;
+}
+
+.btn-primary {
+    background: #25d366;
+    padding: 12px 25px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #128c7e;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1024px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+}
+
+/* تابلت */
+@media (max-width: 768px) {
+    .hero {
+        height: 75vh;
+        padding: 0 15px;
+    }
+
+    .hero__content {
+        max-width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        animation: none;
+        border: none;
+        white-space: normal;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+}
+
+/* موبايل */
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+        padding: 0 10px;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        border: none;
+        animation: none;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        padding: 9px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+/* موبايل صغير جدًا (أقل من 360px) */
+@media (max-width: 360px) {
+    .hero {
+        height: 65vh;
+        padding: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .btn-primary {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
